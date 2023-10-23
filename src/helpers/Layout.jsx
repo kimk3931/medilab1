@@ -1,13 +1,13 @@
-import { useNavigate } from "react-router-dom";    
-const ReactLogout = () => {
-    //logout function
-    const navigation = useNavigate()
-    const logout = () => {
-        localStorage.clear();
-        navigation("/signin")
-    };
-
-    return { logout }; // Export the logout function
+import Side from "../components/Side";
+import TopBar from "../components/TopBar";
+// This will render side bar and topbar
+const Layout = () => {
+    return (  
+        <div>
+            <Side/>
+            <TopBar/>
+        </div>
+    );
 }
  
-export default ReactLogout;
+export default Layout;

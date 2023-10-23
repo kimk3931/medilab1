@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import Layout from "../helpers/Layout";
 import Side from "./Side";
 import axiosInstance2 from "../helpers/axiosInstance2";
+import { Navigate, useNavigate } from "react-router-dom";
 const Signup = () => {
     //hooks
+    const navigate = useNavigate
     const [lab_name, setName] = useState(null)
     const [permit_id, setPermit] = useState(null)
     const [email, setEmail] = useState(null)
@@ -39,7 +41,7 @@ const Signup = () => {
                     setSuccess('')
                 }), 2000)
                 
-                setEmail(''); setName(''); setPassword(''); setPhone(''); setPermit('');
+                setEmail(''); setName(''); setPassword(''); setPhone(''); setPermit('') ;navigate("/signin");
             })
             .catch(function (error) {
                 console.log(error.message);
